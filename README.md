@@ -1,4 +1,6 @@
-# lambdas
+# Lambdas
+
+Este Lab sirve para intruducir al estudiante en el proceso de crear lambdas de forma manual y con el CLI `SAM`.
 
 
 #### Steps to deploy a lambda manually
@@ -29,12 +31,12 @@ aws lambda list-functions --max-items 10
 # delete a lambda 
 aws lambda delete-function --function-name hello-world-function
 
-
 ```
 
 #### AWS cloudformation deploy a lambda
 
 ```bash
+# Zip your code
 zip function.zip index.js
 
 # Upload zip to centralized bucket
@@ -45,21 +47,16 @@ aws s3api put-object \
 
 
 # Deploy lambda with cloudformation
+# This way works but is not the best one.
 aws cloudformation deploy --template-file template.yml \
     --stack-name dev-helllo-world \
     --parameter-overrides \
     Env=dev LambdaName=hello-world \
     --tags Env=Dev Course=DevOps \
     --capabilities CAPABILITY_IAM
+# Now delete the stack and lets see the sam command
 
-
-aws lambda invoke \
-  --function-name dev-helllo-world-helloworld-YnVQ6sQQIZZZ \
-  out --log-type Tail \
-  --query 'LogResult' --output text |  base64 -d
-
-
-
+# This is the oficial way to deploy lambdas
 sam package \
   --template-file template.yml \
   --output-template-file package.yml \
@@ -71,7 +68,13 @@ sam deploy --template-file package.yml \
   --parameter-overrides Env=dev LambdaName=hello-world \
   --capabilities CAPABILITY_IAM
 
-
-sam invoke local “HelloWorldFunction” -e events / event.json
-
 ```
+> [!WARNING]
+> Recuerda borrar tu stack para evitar algún costo en tu cuenta de AWS
+
+**Stack de la lambda creado**
+
+![Stack created](https://i.imgur.com/TVQcSK1.png)
+
+**Lambda**
+![Screenshot from 2021-08-05 03-30-19](https://i.imgur.com/vDMeXbF.png)
