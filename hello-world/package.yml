@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Lambda hola mundo.
+Parameters:
+  Env:
+    Type: String
+Resources:
+  helloworld:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs14.x
+      AutoPublishAlias: live
+      CodeUri: s3://lambdas-zips-us-east-1-wk3v4d/hello-world/196e2724015dfa06f761bf79ba4e3202
+      Description: Lambda hola mundo.
+      MemorySize: 128
+      Timeout: 3
+      Environment:
+        Variables:
+          User: myuser
+          Env:
+            Ref: Env
+          Region:
+            Ref: AWS::Region
