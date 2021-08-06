@@ -59,14 +59,18 @@ aws cloudformation deploy --template-file template.yml \
 # This is the oficial way to deploy lambdas
 sam package \
   --template-file template.yml \
-  --output-template-file package.yml \
+  --output-template-file template.package.yml \
   --s3-bucket lambdas-zips-us-east-1-wk3v4d \
   --s3-prefix hello-world
 
-sam deploy --template-file package.yml \
+sam deploy --template-file template.package.yml \
   --stack-name dev-hello-world \
   --parameter-overrides Env=dev LambdaName=hello-world \
   --capabilities CAPABILITY_IAM
+
+
+# Test local
+sam local invoke helloworld -e message.json
 
 ```
 > [!WARNING]
@@ -78,3 +82,14 @@ sam deploy --template-file package.yml \
 
 **Lambda**
 ![Screenshot from 2021-08-05 03-30-19](https://i.imgur.com/vDMeXbF.png)
+
+
+Test lambda using curl. (You need an API gateway)
+```bash
+curl --request POST \
+  --url https://m6tup7s3ja.execute-api.us-east-1.amazonaws.com/live \
+  --header 'cache-control: no-cache' \
+  --header 'content-type: application/json' \
+  --header 'postman-token: 91dba78e-ff34-95dd-fb7e-a7781d96b970' \
+  --data '{  "key1": "Hola",  "key2": "desde",  "key3": "postman",  "key4": "Diana Laura"}'
+```

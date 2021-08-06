@@ -1,0 +1,117 @@
+{
+    "resource": "/",
+    "path": "/",
+    "httpMethod": "POST",
+    "headers": {
+        "accept": "*/*",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "es-ES,es;q=0.9,en;q=0.8",
+        "cache-control": "no-cache",
+        "content-type": "application/json",
+        "Host": "m6tup7s3ja.execute-api.us-east-1.amazonaws.com",
+        "origin": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+        "postman-token": "0ccca6d7-8620-6913-54ec-5238443b0369",
+        "sec-ch-ua": "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "none",
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36",
+        "X-Amzn-Trace-Id": "Root=1-610cdd03-473c81821ced1555430f94e6",
+        "X-Forwarded-For": "201.138.208.38",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https"
+    },
+    "multiValueHeaders": {
+        "accept": [
+            "*/*"
+        ],
+        "accept-encoding": [
+            "gzip, deflate, br"
+        ],
+        "accept-language": [
+            "es-ES,es;q=0.9,en;q=0.8"
+        ],
+        "cache-control": [
+            "no-cache"
+        ],
+        "content-type": [
+            "text/plain;charset=UTF-8"
+        ],
+        "Host": [
+            "m6tup7s3ja.execute-api.us-east-1.amazonaws.com"
+        ],
+        "origin": [
+            "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop"
+        ],
+        "postman-token": [
+            "0ccca6d7-8620-6913-54ec-5238443b0369"
+        ],
+        "sec-ch-ua": [
+            "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\""
+        ],
+        "sec-ch-ua-mobile": [
+            "?0"
+        ],
+        "sec-fetch-dest": [
+            "empty"
+        ],
+        "sec-fetch-mode": [
+            "cors"
+        ],
+        "sec-fetch-site": [
+            "none"
+        ],
+        "User-Agent": [
+            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36"
+        ],
+        "X-Amzn-Trace-Id": [
+            "Root=1-610cdd03-473c81821ced1555430f94e6"
+        ],
+        "X-Forwarded-For": [
+            "201.138.208.38"
+        ],
+        "X-Forwarded-Port": [
+            "443"
+        ],
+        "X-Forwarded-Proto": [
+            "https"
+        ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {
+        "resourceId": "n850z4g3f2",
+        "resourcePath": "/",
+        "httpMethod": "POST",
+        "extendedRequestId": "Dod4jHvPoAMFuWw=",
+        "requestTime": "06/Aug/2021:06:56:03 +0000",
+        "path": "/live",
+        "accountId": "401202591305",
+        "protocol": "HTTP/1.1",
+        "stage": "live",
+        "domainPrefix": "m6tup7s3ja",
+        "requestTimeEpoch": 1628232963379,
+        "requestId": "6185e75f-3e5f-4a19-a4e2-0da8ceb88ee9",
+        "identity": {
+            "cognitoIdentityPoolId": null,
+            "accountId": null,
+            "cognitoIdentityId": null,
+            "caller": null,
+            "sourceIp": "201.138.208.38",
+            "principalOrgId": null,
+            "accessKey": null,
+            "cognitoAuthenticationType": null,
+            "cognitoAuthenticationProvider": null,
+            "userArn": null,
+            "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36",
+            "user": null
+        },
+        "domainName": "m6tup7s3ja.execute-api.us-east-1.amazonaws.com",
+        "apiId": "m6tup7s3ja"
+    },
+    "body": "{\n  \"key1\": \"Hola\",\n  \"key2\": \"desde\",\n  \"key3\": \"postman\",\n  \"key4\": \"Nuevo api\"\n}\n",
+    "isBase64Encoded": false
+}

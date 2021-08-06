@@ -1,0 +1,33 @@
+---
+swagger: "2.0"
+info:
+  description: "hello world api"
+  version: "2021-08-06T06:43:06Z"
+  title: "dev-hello-world-api"
+host: "m6tup7s3ja.execute-api.us-east-1.amazonaws.com"
+basePath: "/live"
+schemes:
+- "https"
+paths:
+  /:
+    post:
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        type: "aws_proxy"
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:401202591305:function:dev-hello-world-helloworld-qR5vxysQcQZp:live/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        passthroughBehavior: "when_no_match"
+        contentHandling: "CONVERT_TO_TEXT"
+definitions:
+  Empty:
+    type: "object"
+    title: "Empty Schema"

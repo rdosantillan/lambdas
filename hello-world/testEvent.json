@@ -1,6 +1,8 @@
 {
-  "key1": "value1",
-  "key2": "value2",
-  "key3": "value3",
-  "key4": "Nuevo dato"
+  "body": {
+    "key1": "Hola",
+    "key2": "value2",
+    "key3": "value3",
+    "key4": "Hi"
+  }
 }
