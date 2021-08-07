@@ -21,7 +21,7 @@ paths:
       x-amazon-apigateway-integration:
         type: "aws_proxy"
         httpMethod: "POST"
-        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:401202591305:function:dev-hello-world-helloworld-qR5vxysQcQZp:live/invocations"
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:896613149794:function:dev-hello-world-helloworld-khYNEAXihBT2:live/invocations"
         responses:
           default:
             statusCode: "200"

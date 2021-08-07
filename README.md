@@ -60,7 +60,7 @@ aws cloudformation deploy --template-file template.yml \
 sam package \
   --template-file template.yml \
   --output-template-file helloworld.package.yml \
-  --s3-bucket lambdas-zips-us-east-1-wk3v4d \
+  --s3-bucket curso-aws-cero-uno-lambdas-c1b4ck3 \
   --s3-prefix hello-world
 
 # Deploy from local package template
@@ -71,7 +71,7 @@ sam deploy --template-file helloworld.package.yml \
 
 # Deploy from S3 bucket location
 sam deploy --stack-name dev-hello-world \
-  --s3-bucket lambdas-zips-us-east-1-wk3v4d \
+  --s3-bucket curso-aws-cero-uno-lambdas-c1b4ck3 \
   --s3-prefix hello-world/ \
   --parameter-overrides Env=dev LambdaName=hello-world \
   --capabilities CAPABILITY_IAM
