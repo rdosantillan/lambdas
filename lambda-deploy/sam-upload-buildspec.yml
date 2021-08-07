@@ -1,0 +1,34 @@
+version: 0.2
+
+env:
+  variables:
+    build_version: "0.1"
+    service: "helloworld"
+
+phases:
+  install:
+    commands:
+      - curl -L -O https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+      - unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+      - ./sam-installation/install
+      - sam --version
+  pre_build:
+    commands:
+      - echo "===== Hello from pre build ===="
+      - ls -la 
+      - ls -la ../
+      - cd ../lambdas/hello-world/
+  build:
+    commands:
+      - echo "==== Deploying ===="
+      - |
+        sam package \
+        --template-file template.yml \
+        --output-template-file ${service}.package.yml \
+        --s3-bucket lambdas-zips-us-east-1-wk3v4d \
+        --s3-prefix hello-world
+      - |
+        aws s3api put-object \
+        --body helloworld.package.yml \
+        --bucket lambdas-zips-us-east-1-wk3v4d \
+        --key hello-world/helloworld.package.yml
