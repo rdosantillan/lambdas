@@ -17,7 +17,7 @@ exports.handler = (event, context, callback) => {
         "headers": {
             "Content-Type": "application/json"
         },
-        "body": JSON.stringify('Welcome ' + body.key3 + body.key4
+        "body": JSON.stringify('Welcome ' + body.key3 + ' ' + body.key4
                  + '! Your age: ' + body.key1
                  + ' Your Fav number:' + body.key2
                  + ' End of message'),
