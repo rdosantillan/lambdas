@@ -10,14 +10,17 @@ exports.handler = (event, context, callback) => {
     console.log('value1 =', body.key1);
     console.log('value2 =', body.key2);
     console.log('value3 =', body.key3);
-    console.log('welcome ' + body.key4 + '!');
+    console.log('value4 =', body.key4);
 
     var response = {
         "statusCode": 200,
         "headers": {
             "Content-Type": "application/json"
         },
-        "body": JSON.stringify('Welcome ' + body.key4 + '!'),
+        "body": JSON.stringify('Welcome ' + body.key3 + body.key4
+                 + '! Your age: ' + body.key1
+                 + ' Your Fav number:' + body.key2
+                 + 'End message'),
         "isBase64Encoded": false
     };
 

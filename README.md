@@ -41,9 +41,9 @@ zip function.zip index.js
 
 # Upload zip to centralized bucket
 aws s3api put-object \
-  --body function.zip \
+  --body helloworld.package.yml \
   --bucket lambdas-zips-us-east-1-wk3v4d \
-  --key hello-world/function.zip
+  --key hello-world/helloworld.package.yml
 
 
 # Deploy lambda with cloudformation
@@ -59,12 +59,20 @@ aws cloudformation deploy --template-file template.yml \
 # This is the oficial way to deploy lambdas
 sam package \
   --template-file template.yml \
-  --output-template-file template.package.yml \
+  --output-template-file helloworld.package.yml \
   --s3-bucket lambdas-zips-us-east-1-wk3v4d \
   --s3-prefix hello-world
 
-sam deploy --template-file template.package.yml \
+# Deploy from local package template
+sam deploy --template-file helloworld.package.yml \
   --stack-name dev-hello-world \
+  --parameter-overrides Env=dev LambdaName=hello-world \
+  --capabilities CAPABILITY_IAM
+
+# Deploy from S3 bucket location
+sam deploy --stack-name dev-hello-world \
+  --s3-bucket lambdas-zips-us-east-1-wk3v4d \
+  --s3-prefix hello-world/ \
   --parameter-overrides Env=dev LambdaName=hello-world \
   --capabilities CAPABILITY_IAM
 
