@@ -3,6 +3,7 @@ version: 0.2
 env:
   variables:
     build_version: "0.1"
+    BucketZips: "curso-aws-cero-uno-lambdas-c1b4ck3"
 
 phases:
   install:
@@ -17,7 +18,7 @@ phases:
   build:
     commands:
       - echo "==== Deploying ===="
-      - aws s3 cp s3://lambdas-zips-us-east-1-wk3v4d/hello-world/helloworld.package.yml  template.package.yml
+      - aws s3 cp s3://${BucketZips}/hello-world/helloworld.package.yml  template.package.yml
       - |
         sam deploy --template-file template.package.yml \
         --stack-name dev-hello-world \
